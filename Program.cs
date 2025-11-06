@@ -1,4 +1,4 @@
-﻿namespace FilaLinearCircular
+﻿namespace TADs
 {
     public class Lista
     {
@@ -10,18 +10,22 @@
             dados = new int[tamMax];
             tamAtual = 0;
         }
+        
         public bool EstaVazia()
         {
             return tamAtual == 0;
         }
+        
         public bool EstaCheia()
         {
             return tamAtual == tamMax;
         }
+        
         public int Tamanho()
         {
             return tamAtual;
         }
+        
         public void InserirInicio(int v)
         {
             if (EstaCheia())
@@ -35,6 +39,7 @@
             dados[0] = v;
             tamAtual++;
         }
+        
         public void InserirFinal(int v)
         {
             if (EstaCheia())
@@ -45,6 +50,7 @@
             dados[tamAtual] = v;
             tamAtual++;
         }
+        
         public void InserirPosicao(int v, int pos)
         {
             if(pos < 0 || pos > tamAtual)
@@ -64,6 +70,7 @@
             dados[pos] = v;
             tamAtual++;
         }
+        
         public int RemoverInicio()
         {
             if (EstaVazia())
@@ -79,6 +86,7 @@
             tamAtual--;
             return x;
         }
+        
         public int RemoverFinal()
         {
             if (EstaVazia())
@@ -89,6 +97,7 @@
             tamAtual--;
             return dados[tamAtual];
         }
+        
         public int RemoverPosicao(int pos)
         {
             if (pos < 0 || pos >= tamAtual)
@@ -109,6 +118,7 @@
             tamAtual--;
             return x;
         }
+        
         public void Imprimir()
         {
             if (EstaVazia()) Console.Write("Lista vazia: ");
@@ -132,14 +142,17 @@
             dados = new int[tamMax];
             topo = 0;
         }
+        
         public bool EstaVazia()
         {
             return topo == 0;
         }
+        
         public bool EstaCheia()
         {
             return topo == tamMax;
         }
+        
         public void Empilhar(int v)
         {
             if (EstaCheia()) { 
@@ -149,6 +162,7 @@
             dados[topo] = v;
             topo++;
         }
+        
         public int Desempilhar()
         {
             if (EstaVazia())
@@ -159,6 +173,7 @@
             topo--;
             return dados[topo];
         }
+        
         public int Topo()
         {
             if (EstaVazia())
@@ -168,6 +183,7 @@
             }
             return dados[topo-1];
         }
+        
         public void Imprimir()
         {
             if (EstaVazia()) Console.Write("Pilha vazia: ");
@@ -263,6 +279,7 @@
     {
         public int Dado;
         public Celula Proximo;
+        
         public Celula(int d)
         {
             Dado = d;
@@ -395,10 +412,12 @@
             topo = null;
             tamanho = 0;
         }
+        
         public bool EstaVazia()
         {
             return tamanho == 0;
         }
+        
         public void Empilhar(int v)
         {
             Celula nova = new Celula(v);
@@ -406,6 +425,7 @@
             topo = nova;
             tamanho++;
         }
+        
         public int Desempilhar()
         {
             if (EstaVazia())
@@ -418,6 +438,7 @@
             tamanho--;
             return v;
         }
+        
         public int Topo()
         {
             if (EstaVazia())
@@ -427,6 +448,7 @@
             }
             return topo.Dado;
         }
+        
         public void Imprimir()
         {
             if (EstaVazia())
@@ -529,3 +551,4 @@
         }
     }
 }
+
